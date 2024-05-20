@@ -1,0 +1,35 @@
+@MinimalApisOverview_HostAddress = https://localhost:7028
+
+POST {{MinimalApisOverview_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name": "walk dog",
+  "isComplete": true
+}
+
+###
+
+GET {{MinimalApisOverview_HostAddress}}/todoitems
+Accept: application/json
+
+###
+
+GET {{MinimalApisOverview_HostAddress}}/todoitems/2
+Accept: application/json
+
+###
+
+PUT {{MinimalApisOverview_HostAddress}}/todoitems/1
+Content-Type: application/json
+
+{
+  "name": "walk dog",
+  "isComplete": false
+}
+
+###
+
+
+DELETE {{MinimalApisOverview_HostAddress}}/todoitems/1
+###
