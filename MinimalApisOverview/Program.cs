@@ -7,6 +7,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
+app.MapGet("/", (LinkGenerator linkGenerator, HttpContext context) =>
+    linkGenerator.GetUriByName(context, "getAllTodos", values: null));
+
 app.MapTodoEndpoints();
 
 app.Run();

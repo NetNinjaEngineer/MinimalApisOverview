@@ -8,17 +8,23 @@ public static class TodoEndpoints
     {
         var todoItems = app.MapGroup("/todoitems");
 
-        todoItems.MapGet("/", GetAllTodos);
+        todoItems.MapGet("/", GetAllTodos)
+            .WithName("getAllTodos");
 
-        todoItems.MapGet("/complete", GetCompleteTodos);
+        todoItems.MapGet("/complete", GetCompleteTodos)
+            .WithName("getCompleteTodos");
 
-        todoItems.MapGet("/{id}", GetTodo);
+        todoItems.MapGet("/{id}", GetTodo)
+            .WithName("getTodo");
 
-        todoItems.MapPost("/", CreateTodo);
+        todoItems.MapPost("/", CreateTodo)
+            .WithName("createTodo");
 
-        todoItems.MapPut("/{id}", UpdateTodo);
+        todoItems.MapPut("/{id}", UpdateTodo)
+            .WithName("updateTodo");
 
-        todoItems.MapDelete("/{id}", DeleteTodo);
+        todoItems.MapDelete("/{id}", DeleteTodo)
+            .WithName("deleteTodo");
     }
 
     #region Route handler methods
